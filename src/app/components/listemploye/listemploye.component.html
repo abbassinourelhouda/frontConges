@@ -1,0 +1,392 @@
+<div class="content-body" style="min-height: 728px;">
+    <!-- row -->
+    <div class="page-titles">
+        <ol class="breadcrumb">
+            <li>
+                <h5 class="bc-title">Employee</h5>
+            </li>
+            <li class="breadcrumb-item"><a href="javascript:void(0)">
+                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M2.125 6.375L8.5 1.41667L14.875 6.375V14.1667C14.875 14.5424 14.7257 14.9027 14.4601 15.1684C14.1944 15.4341 13.8341 15.5833 13.4583 15.5833H3.54167C3.16594 15.5833 2.80561 15.4341 2.53993 15.1684C2.27426 14.9027 2.125 14.5424 2.125 14.1667V6.375Z"
+                            stroke="#2C2C2C" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M6.375 15.5833V8.5H10.625V15.5833" stroke="#2C2C2C" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                    </svg>
+                    Employee </a>
+            </li>
+            <li class="breadcrumb-item active"><a href="javascript:void(0)">Employee</a></li>
+        </ol>
+        <a class="text-primary fs-13" data-bs-toggle="offcanvas" href="#offcanvasExample1" role="button"
+            aria-controls="offcanvasExample1">+ Add Task</a>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body p-0">
+                        <div class="table-responsive active-projects style-1">
+                            <div class="tbl-caption">
+                                <h4 class="heading mb-0">Employees</h4>
+                                <div>
+                                    <a class="btn btn-primary btn-sm" data-bs-toggle="offcanvas"
+                                        href="#offcanvasExample" role="button" aria-controls="offcanvasExample">+ Add
+                                        Employee</a>
+                                    <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal1">
+                                        + Invite Employee
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="empoloyees-tblwrapper_wrapper" class="dataTables_wrapper no-footer">
+                                <div class="dt-buttons"><button
+                                        class="dt-button buttons-excel buttons-html5 btn btn-sm border-0" tabindex="0"
+                                        aria-controls="empoloyees-tblwrapper" type="button"><span><i
+                                                class="fa-solid fa-file-excel"></i> Export Report</span></button> </div>
+                                <table id="empoloyees-tblwrapper" class="table dataTable no-footer" role="grid"
+                                    aria-describedby="empoloyees-tblwrapper_info">
+                                    <thead>
+                                        <tr role="row">
+                                            <th class="sorting_asc" tabindex="0" aria-controls="empoloyees-tblwrapper"
+                                                rowspan="1" colspan="1" aria-sort="ascending"
+                                                aria-label="Employee ID: activate to sort column descending"
+                                                style="width: 96.125px;">Employee ID</th>
+                                            <th class="sorting" tabindex="0" aria-controls="empoloyees-tblwrapper"
+                                                rowspan="1" colspan="1"
+                                                aria-label="Employee Name: activate to sort column ascending"
+                                                style="width: 158.969px;">Employee Name</th>
+                                            <!-- <th class="sorting" tabindex="0" aria-controls="empoloyees-tblwrapper" rowspan="1" colspan="1" aria-label="Department: activate to sort column ascending" style="width: 121.031px;">Department</th> -->
+                                            <th class="sorting" tabindex="0" aria-controls="empoloyees-tblwrapper"
+                                                rowspan="1" colspan="1"
+                                                aria-label="Email Address: activate to sort column ascending"
+                                                style="width: 108.594px;">Email Address</th>
+                                            <th class="sorting" tabindex="0" aria-controls="empoloyees-tblwrapper"
+                                                rowspan="1" colspan="1"
+                                                aria-label="Contact Number: activate to sort column ascending"
+                                                style="width: 125.219px;">Téléphone</th>
+                                            <th class="sorting" tabindex="0" aria-controls="empoloyees-tblwrapper"
+                                                rowspan="1" colspan="1"
+                                                aria-label="Gender: activate to sort column ascending"
+                                                style="width: 63.9688px;">Cin</th>
+                                            <th class="sorting" tabindex="0" aria-controls="empoloyees-tblwrapper"
+                                                rowspan="1" colspan="1"
+                                                aria-label="Location: activate to sort column ascending"
+                                                style="width: 71.3125px;">Adresse</th>
+                                            <!-- <th class="sorting" tabindex="0" aria-controls="empoloyees-tblwrapper" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 61.5156px;">Status</th> -->
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+
+
+                                        <!-- *ngFor="let e of listemploye" -->
+                                        <tr role="row" class="odd" *ngFor="let e of listemploye;let index=index">
+                                            <td class="sorting_1"><span>{{index+1}}</span></td>
+                                            <td>
+                                                <div class="products">
+                                                    <!-- <img src="images/contacts/pic2.jpg" class="avatar avatar-md" alt=""> -->
+                                                    <div>
+                                                        <h6>{{e.nom}} {{e.prenom}}</h6>
+                                                        <!-- <span>Web Designer</span>	 -->
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <!-- <td><span>Computer Science</span></td> -->
+                                            <td><span class="text-primary">{{e.email}}</span></td>
+                                            <td>
+                                                <span>{{e.tel}}</span>
+                                            </td>
+                                            <td>
+                                                <span>{{e.numcin}}</span>
+                                            </td>
+                                            <td>
+                                                <span>{{e.adresse}}</span>
+                                            </td>
+                                            <!-- <td>
+                                            <span class="badge badge-success light border-0">Active</span>
+                                        </td> -->
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+                                <div class="dataTables_info" id="empoloyees-tblwrapper_info" role="status"
+                                    aria-live="polite">Showing 1 to 10 of 12 entries</div>
+                                <div class="dataTables_paginate paging_simple_numbers"
+                                    id="empoloyees-tblwrapper_paginate"><a class="paginate_button previous disabled"
+                                        aria-controls="empoloyees-tblwrapper" data-dt-idx="0" tabindex="0"
+                                        id="empoloyees-tblwrapper_previous"><i
+                                            class="fa-solid fa-angle-left"></i></a><span><a
+                                            class="paginate_button current" aria-controls="empoloyees-tblwrapper"
+                                            data-dt-idx="1" tabindex="0">1</a><a class="paginate_button "
+                                            aria-controls="empoloyees-tblwrapper" data-dt-idx="2"
+                                            tabindex="0">2</a></span><a class="paginate_button next"
+                                        aria-controls="empoloyees-tblwrapper" data-dt-idx="3" tabindex="0"
+                                        id="empoloyees-tblwrapper_next"><i class="fa-solid fa-angle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="offcanvas offcanvas-end customeoff " tabindex="-1" id="offcanvasExample" aria-modal="true" role="dialog">
+    <div class="offcanvas-header">
+        <h5 class="modal-title" id="#gridSystemModal">Ajouter Employee</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="container-fluid">
+
+            <form [formGroup]="signupform">
+                <div class="row">
+                    <div class="col-xl-6 mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Username <span
+                                class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1"
+                            placeholder="entrer votre nom" formControlName="username">
+                    </div>
+                    <div class="col-xl-6 mb-3">
+                        <label for="exampleFormControlInput2" class="form-label">Nom<span
+                                class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="exampleFormControlInput2" placeholder=""
+                            formControlName="nom">
+                    </div>
+                    <div class="col-xl-6 mb-3">
+                        <label for="exampleFormControlInput2" class="form-label">Prenom<span
+                                class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="exampleFormControlInput2" placeholder=""
+                            formControlName="prenom">
+                    </div>
+                    <div class="col-xl-6 mb-3">
+                        <label for="exampleFormControlInput3" class="form-label"> Email<span
+                                class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="exampleFormControlInput3" placeholder=""
+                            formControlName="email">
+                    </div>
+                    <div class="col-xl-6 mb-3">
+                        <label for="exampleFormControlInput3" class="form-label"> Adresse<span
+                                class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="exampleFormControlInput3" placeholder=""
+                            formControlName="adresse">
+                    </div>
+                    <div class="col-xl-6 mb-3">
+                        <label for="exampleFormControlInput3" class="form-label"> Téléphone<span
+                                class="text-danger">*</span></label>
+                        <input type="email" class="form-control" id="exampleFormControlInput3" placeholder=""
+                            formControlName="tel">
+                    </div>
+                    <div class="col-xl-6 mb-3">
+                        <label for="exampleFormControlInput3" class="form-label"> Cin<span
+                                class="text-danger">*</span></label>
+                        <input type="email" class="form-control" id="exampleFormControlInput3" placeholder=""
+                            formControlName="numcin">
+                    </div>
+                    <div class="col-xl-6 mb-3">
+                        <label for="exampleFormControlInput4" class="form-label">Password<span
+                                class="text-danger">*</span></label>
+                        <input type="password" class="form-control" id="exampleFormControlInput4" placeholder=""
+                            formControlName="password">>
+                    </div>
+                    <div class="col-xl-6 mb-3">
+                        <label class="form-label">Equipe<span class="text-danger">*</span></label>
+                       
+                            <select class="form-control" formControlName="equipe_id">
+
+                                <option *ngFor="let e of listequipe" [value]="e.id">{{e.nom}}</option>
+
+                            </select>
+                     
+                    </div>
+                    <div class="col-xl-6 mb-3">
+                        <label class="form-label">Contrat<span class="text-danger">*</span></label>
+                       
+                            <select class="form-control" formControlName="contrat_id">
+
+                                <option *ngFor="let e of listcontrat" [value]="e.id">{{e.type}}</option>
+
+                            </select>
+                     
+                    </div>
+                    <div class="col-xl-6 mb-3">
+                        <input type="file" (change)="handleFileInput($event)" 
+                        name="file"  class="form-control form-control-user"
+                            id="exampleRepeatPassword" placeholder="file">
+                    </div>
+                    <!-- <div class="col-xl-6 mb-3">
+                        <label class="form-label">Department<span class="text-danger">*</span></label>
+                        <div class="dropdown bootstrap-select default-select form-control"><select
+                                class="default-select form-control">
+                                <option data-display="Select">Please select</option>
+                                <option value="html">Software</option>
+                                <option value="css">Doit</option>
+                                <option value="javascript">Designing</option>
+                            </select><button type="button" tabindex="-1" class="btn dropdown-toggle btn-light"
+                                data-bs-toggle="dropdown" role="combobox" aria-owns="bs-select-2"
+                                aria-haspopup="listbox" aria-expanded="false" title="Please select">
+                                <div class="filter-option">
+                                    <div class="filter-option-inner">
+                                        <div class="filter-option-inner-inner">Please select</div>
+                                    </div>
+                                </div>
+                            </button>
+                            <div class="dropdown-menu ">
+                                <div class="inner show" role="listbox" id="bs-select-2" tabindex="-1">
+                                    <ul class="dropdown-menu inner show" role="presentation"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 mb-3">
+                        <label class="form-label">Country<span class="text-danger">*</span></label>
+                        <div class="dropdown bootstrap-select default-select form-control"><select
+                                class="default-select form-control">
+                                <option data-display="Select">Please select</option>
+                                <option value="html">Ind</option>
+                                <option value="css">USA</option>
+                                <option value="javascript">UK</option>
+                            </select><button type="button" tabindex="-1" class="btn dropdown-toggle btn-light"
+                                data-bs-toggle="dropdown" role="combobox" aria-owns="bs-select-3"
+                                aria-haspopup="listbox" aria-expanded="false" title="Please select">
+                                <div class="filter-option">
+                                    <div class="filter-option-inner">
+                                        <div class="filter-option-inner-inner">Please select</div>
+                                    </div>
+                                </div>
+                            </button>
+                            <div class="dropdown-menu ">
+                                <div class="inner show" role="listbox" id="bs-select-3" tabindex="-1">
+                                    <ul class="dropdown-menu inner show" role="presentation"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 mb-3">
+                        <label for="exampleFormControlInput88" class="form-label">Mobile<span
+                                class="text-danger">*</span></label>
+                        <input type="number" class="form-control" id="exampleFormControlInput88" placeholder="">
+                    </div>
+                    <div class="col-xl-6 mb-3">
+                        <label class="form-label">Gender<span class="text-danger">*</span></label>
+                        <div class="dropdown bootstrap-select default-select form-control"><select
+                                class="default-select form-control">
+                                <option data-display="Select">Please select</option>
+                                <option value="html">Male</option>
+                                <option value="css">Female</option>
+                                <option value="javascript">Other</option>
+                            </select><button type="button" tabindex="-1" class="btn dropdown-toggle btn-light"
+                                data-bs-toggle="dropdown" role="combobox" aria-owns="bs-select-4"
+                                aria-haspopup="listbox" aria-expanded="false" title="Please select">
+                                <div class="filter-option">
+                                    <div class="filter-option-inner">
+                                        <div class="filter-option-inner-inner">Please select</div>
+                                    </div>
+                                </div>
+                            </button>
+                            <div class="dropdown-menu ">
+                                <div class="inner show" role="listbox" id="bs-select-4" tabindex="-1">
+                                    <ul class="dropdown-menu inner show" role="presentation"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 mb-3">
+                        <label for="exampleFormControlInput99" class="form-label">Joining Date<span
+                                class="text-danger">*</span></label>
+                        <input type="date" class="form-control" id="exampleFormControlInput99">
+                    </div>
+                    <div class="col-xl-6 mb-3">
+                        <label for="exampleFormControlInput8" class="form-label">Date of Birth<span
+                                class="text-danger">*</span></label>
+                        <input type="date" class="form-control" id="exampleFormControlInput8">
+                    </div>
+                    <div class="col-xl-6 mb-3">
+                        <label for="exampleFormControlInput10" class="form-label">Reporting To<span
+                                class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="exampleFormControlInput10" placeholder="">
+                    </div> -->
+                    <!-- <div class="col-xl-6 mb-3">
+                        <label class="form-label">Language Select<span class="text-danger">*</span></label>
+                        <div class="dropdown bootstrap-select default-select form-control"><select
+                                class="default-select form-control">
+                                <option data-display="Select">Please select</option>
+                                <option value="html">English</option>
+                                <option value="css">Hindi</option>
+                                <option value="javascript">Canada</option>
+                            </select><button type="button" tabindex="-1" class="btn dropdown-toggle btn-light"
+                                data-bs-toggle="dropdown" role="combobox" aria-owns="bs-select-5"
+                                aria-haspopup="listbox" aria-expanded="false" title="Please select">
+                                <div class="filter-option">
+                                    <div class="filter-option-inner">
+                                        <div class="filter-option-inner-inner">Please select</div>
+                                    </div>
+                                </div>
+                            </button>
+                            <div class="dropdown-menu ">
+                                <div class="inner show" role="listbox" id="bs-select-5" tabindex="-1">
+                                    <ul class="dropdown-menu inner show" role="presentation"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 mb-3">
+                        <label class="form-label">User Role<span class="text-danger">*</span></label>
+                        <div class="dropdown bootstrap-select default-select form-control"><select
+                                class="default-select form-control">
+                                <option data-display="Select">Please select</option>
+                                <option value="html">Parmanent</option>
+                                <option value="css">Parttime</option>
+                                <option value="javascript">Per Hours</option>
+                            </select><button type="button" tabindex="-1" class="btn dropdown-toggle btn-light"
+                                data-bs-toggle="dropdown" role="combobox" aria-owns="bs-select-6"
+                                aria-haspopup="listbox" aria-expanded="false" title="Please select">
+                                <div class="filter-option">
+                                    <div class="filter-option-inner">
+                                        <div class="filter-option-inner-inner">Please select</div>
+                                    </div>
+                                </div>
+                            </button>
+                            <div class="dropdown-menu ">
+                                <div class="inner show" role="listbox" id="bs-select-6" tabindex="-1">
+                                    <ul class="dropdown-menu inner show" role="presentation"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12 mb-3">
+                        <label class="form-label">Address<span class="text-danger">*</span></label>
+                        <textarea rows="2" class="form-control"></textarea>
+                    </div>
+                    <div class="col-xl-12 mb-3">
+                        <label class="form-label">About<span class="text-danger">*</span></label>
+                        <textarea rows="2" class="form-control"></textarea>
+                    </div> -->
+                </div>
+                <div>
+                    <button class="btn btn-primary me-1" (click)="signup()">Ajouter</button>
+                    <button class="btn btn-danger light ms-1">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
